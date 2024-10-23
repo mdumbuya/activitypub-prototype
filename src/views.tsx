@@ -1,6 +1,6 @@
 import type { JSX } from "preact/jsx-runtime";
 
-export const Layout = (props: { children: JSX.Element }) => (
+export const Layout = ({ children }: { children: JSX.Element }) => (
   <html lang="en">
     <head>
       <meta charset="utf-8" />
@@ -13,7 +13,7 @@ export const Layout = (props: { children: JSX.Element }) => (
       />
     </head>
     <body>
-      <main class="container">{props.children}</main>
+      <main class="container">{children}</main>
     </body>
   </html>
 );
@@ -24,13 +24,13 @@ export const SetupForm = () => (
     <form method="post" action="/setup">
       <fieldset>
         <label>
-          Username{" "}
+          Username
           <input
             type="text"
             name="username"
             required
             maxlength={50}
-            pattern="^[a-z0-9_\\-]+$"
+            pattern="^[a-z0-9_-]+$"
           />
         </label>
       </fieldset>
@@ -38,4 +38,3 @@ export const SetupForm = () => (
     </form>
   </>
 );
-
