@@ -38,3 +38,17 @@ export const SetupForm = () => (
     </form>
   </>
 );
+
+export interface ProfileProps {
+  name: string;
+  handle: string;
+}
+
+export const Profile = ({ name, handle }: ProfileProps) => (
+  <>
+    <hgroup>
+      <h1>{name}</h1>
+      <p style="user-select: all;">{handle}</p>
+    </hgroup>
+  </>
+);
